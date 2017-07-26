@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker-compose up -d --build
+./bin/composer install --ignore-platform-reqs

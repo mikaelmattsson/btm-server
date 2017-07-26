@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+docker-compose exec server-php /bin/bash -c "stty sane && php ./vendor/bin/phpunit $@"

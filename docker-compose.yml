@@ -1,0 +1,37 @@
+version: '2.1'
+services:
+
+  server-nginx:
+    build: ./docker/images/server-nginx
+    ports:
+      - 80:80
+    links:
+      - server-php
+    volumes:
+      - ./server/public:/var/www/public:cached
+      - ./data/logs/server-nginx:/logs:cached
+
+  server-php:
+    build: ./docker/images/server-php-dev
+    working_dir: /var/www
+    user: www-data
+    links:
+      - mongodb
+      - redis
+    volumes:
+      - ./server:/var/www:cached
+      - ./data/logs/server-php:/logs:cached
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PASSWORD=null
+      - REDIS_PORT=6379
+      - MONGO_HOST=mongodb
+      - MONGO_DATABASE=project
+
+  mongodb:
+    image: mongo:3.4
+    ports:
+      - 27018:27017
+
+  redis:
+      image: redis
