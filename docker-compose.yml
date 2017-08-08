@@ -32,6 +32,8 @@ services:
     image: mongo:3.4
     ports:
       - 27018:27017
+    volumes:
+      - ./data/mongo/:/data/db:delegated
 
   redis:
       image: redis
