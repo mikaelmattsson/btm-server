@@ -29,6 +29,7 @@ class RouteServiceProvider extends ServiceProvider
             'namespace'  => $this->namespace,
         ], function (Router $router) {
 
+            $router->get('/high-score/list', 'ListController@list');
             $router->post('/high-score/submit', 'SubmitController@submit');
 
         });
