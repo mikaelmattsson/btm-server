@@ -20,6 +20,8 @@ class SubmitController extends Controller
 
         $record->setScore((int) $request->input('score', 0));
         $record->setTime((int) $request->input('time', 0));
+        $record->setUserName((int) $request->input('userName', ''));
+        $record->setSteamId((int) $request->input('steamId', ''));
 
         $documentManager->persist($record);
 

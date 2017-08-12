@@ -23,9 +23,21 @@ class HighScoreRecord extends AbstractDocument
     protected $time;
 
     /**
+     * @var string
+     * @ODM\Field(type="string")
+     */
+    protected $userName;
+
+    /**
+     * @var string
+     * @ODM\Field(type="string")
+     */
+    protected $steamId;
+
+    /**
      * @return int
      */
-    public function getScore(): int
+    public function getScore(): ?int
     {
         return $this->score;
     }
@@ -33,7 +45,7 @@ class HighScoreRecord extends AbstractDocument
     /**
      * @param int $score
      */
-    public function setScore(int $score)
+    public function setScore(?int $score)
     {
         $this->score = $score;
     }
@@ -41,7 +53,7 @@ class HighScoreRecord extends AbstractDocument
     /**
      * @return int
      */
-    public function getTime(): int
+    public function getTime(): ?int
     {
         return $this->time;
     }
@@ -49,8 +61,40 @@ class HighScoreRecord extends AbstractDocument
     /**
      * @param int $time
      */
-    public function setTime(int $time)
+    public function setTime(?int $time)
     {
         $this->time = $time;
+    }
+
+    /**
+     * @return string
+     */
+    public function getUserName(): ?string
+    {
+        return $this->userName;
+    }
+
+    /**
+     * @param string $userName
+     */
+    public function setUserName(?string $userName)
+    {
+        $this->userName = $userName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSteamId(): ?string
+    {
+        return $this->steamId;
+    }
+
+    /**
+     * @param string $steamId
+     */
+    public function setSteamId(?string $steamId)
+    {
+        $this->steamId = $steamId;
     }
 }
