@@ -2,3 +2,5 @@
 
 docker-compose -f docker-compose.yml -f docker/config/docker-compose.prod.yml up -d --build
 ./bin/composer install --ignore-platform-reqs
+
+docker-compose exec redis redis-cli flushall

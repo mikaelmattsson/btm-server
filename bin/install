@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-docker-compose up -d --build
+docker-compose up -d --build --force-recreate
 ./bin/composer install --ignore-platform-reqs
+
+docker-compose exec redis redis-cli flushall
