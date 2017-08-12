@@ -7,17 +7,20 @@
 
     <title>Laravel</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,600" rel="stylesheet" type="text/css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <style>
         html, body {
             background-color: #fff;
-            color: #636b6f;
+            color: #2e3336;
             font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
+            font-weight: 200;
             margin: 0;
+        }
+
+        .content {
+            padding: 30px;
         }
     </style>
 </head>
