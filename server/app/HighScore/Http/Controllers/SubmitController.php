@@ -18,6 +18,10 @@ class SubmitController extends Controller
     {
         $record = new HighScoreRecord();
 
+        if (!$request->input('steamId')) {
+            return;
+        }
+
         $record->setScore((int) $request->input('score', 0));
         $record->setTime((int) $request->input('time', 0));
         $record->setUserName((string) $request->input('userName', ''));
