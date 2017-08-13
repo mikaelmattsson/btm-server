@@ -43,13 +43,14 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 110px;
                 font-family: 'Carter One', cursive;
-                text-transform: uppercase;
+                letter-spacing: 0.15rem;
+                text-transform: capitalize;
                 color: #ffe146;
                 -webkit-text-stroke: 1px #222;
                 text-shadow:
-                        3px 3px 0 #222,
+                        2px 2px 0 #222,
                         -1px -1px 0 #222,
                         1px -1px 0 #222,
                         -1px 1px 0 #222,
@@ -57,6 +58,7 @@
                 margin: 0 0 30px;
                 font-weight: normal;
                 line-height: 1;
+                font-variant: small-caps;
             }
 
             a {
