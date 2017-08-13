@@ -5,11 +5,13 @@ services:
     build: ./docker/images/server-nginx
     ports:
       - 80:80
+      - 443:443
     links:
       - server-php
     volumes:
       - ./server/public:/var/www/public:cached
       - ./data/logs/server-nginx:/logs:cached
+      - ./data/letsencrypt:/etc/letsencrypt:cached
 
   server-php:
     build: ./docker/images/server-php-dev
