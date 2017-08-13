@@ -2,6 +2,7 @@ version: '2.1'
 services:
 
   server-nginx:
+    restart: always
     build: ./docker/images/server-nginx
     ports:
       - 80:80
@@ -12,8 +13,10 @@ services:
       - ./server/public:/var/www/public:cached
       - ./data/logs/server-nginx:/logs:cached
       - ./data/letsencrypt:/etc/letsencrypt:cached
+      - ./data/nginx/certs:/etc/nginx/certs:cached
 
   server-php:
+    restart: always
     build: ./docker/images/server-php-dev
     working_dir: /var/www
     user: www-data
@@ -30,6 +33,7 @@ services:
       - MONGO_HOST=mongodb
 
   mongodb:
+    restart: always
     image: mongo:3.4
     ports:
       - 27018:27017
@@ -37,4 +41,5 @@ services:
       - ./data/mongo/:/data/db:delegated
 
   redis:
+    restart: always
     image: redis

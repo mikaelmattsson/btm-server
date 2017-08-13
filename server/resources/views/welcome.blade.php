@@ -7,18 +7,19 @@
 
         <title>Laravel</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Carter+One|Chewy|Salsa" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-        <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                color: #212226;
+                font-family: 'Salsa', cursive;
+
+                font-weight: 400;
                 height: 100vh;
                 margin: 0;
+                font-size: 26px;
             }
 
             .full-height {
@@ -35,60 +36,113 @@
                 position: relative;
             }
 
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
             .content {
                 text-align: center;
+                position: relative;
+                z-index: 2;
             }
 
             .title {
                 font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
+                font-family: 'Carter One', cursive;
                 text-transform: uppercase;
+                color: #ffe146;
+                -webkit-text-stroke: 1px #222;
+                text-shadow:
+                        3px 3px 0 #222,
+                        -1px -1px 0 #222,
+                        1px -1px 0 #222,
+                        -1px 1px 0 #222,
+                        1px 1px 0 #222;
+                margin: 0 0 30px;
+                font-weight: normal;
+                line-height: 1;
             }
 
-            .m-b-md {
-                margin-bottom: 30px;
+            a {
+                text-decoration: none;
+                color: inherit;
             }
+
+            h2, h3, h4 {
+                font-family: 'Chewy', cursive;
+                font-weight: 400;
+                letter-spacing: 0.1rem;
+            }
+
+
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .background {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                z-index: 0;
+                background: -webkit-linear-gradient(top, rgb(161, 219, 255) 0%, rgb(203, 235, 255) 53%, rgb(240, 249, 255) 100%);
+                background-size: 100% 100%;
+            }
+
+            .clouds {
+                height: 300px;
+                width: 200px;
+                position: absolute;
+            }
+
+            .cloud1 {
+                top: 80px;
+                z-index: 100;
+                fill: #eee;
+                -webkit-animation: move 20s linear infinite;
+                -moz-animation: move 20s linear infinite;
+                -o-animation: move 20s linear infinite;
+                animation: move 20s linear infinite;
+            }
+
+            .cloud2 {
+                top: 240px;
+                z-index: 200;
+                fill: #eee;
+                -webkit-animation: move 35s linear 10s infinite backwards;
+                -moz-animation: move 35s linear 10s infinite backwards;
+                -o-animation: move 35s linear 10s infinite backwards;
+                animation: move 35s linear 10s infinite backwards;
+            }
+
+            @-webkit-keyframes move {
+                from {-webkit-transform: translateX(-400px);}
+                to {-webkit-transform: translateX(1350px);}
+            }
+
+
         </style>
     </head>
     <body>
+
+    <div class="background">
+        <svg class="clouds cloud1" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="512" height="512"
+             viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+        <path id="cloud-icon"
+              d="M406.1 227.63c-8.23-103.65-144.71-137.8-200.49-49.05 -36.18-20.46-82.33 3.61-85.22 45.9C80.73 229.34 50 263.12 50 304.1c0 44.32 35.93 80.25 80.25 80.25h251.51c44.32 0 80.25-35.93 80.25-80.25C462 268.28 438.52 237.94 406.1 227.63z"></path>
+        </svg>
+        <svg class="clouds cloud2" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0" y="0" width="512" height="512"
+           viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+            <path id="cloud-icon"
+                  d="M406.1 227.63c-8.23-103.65-144.71-137.8-200.49-49.05 -36.18-20.46-82.33 3.61-85.22 45.9C80.73 229.34 50 263.12 50 304.1c0 44.32 35.93 80.25 80.25 80.25h251.51c44.32 0 80.25-35.93 80.25-80.25C462 268.28 438.52 237.94 406.1 227.63z"></path>
+        </svg>
+    </div>
+
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                <h1 class="title">
+                    Battle Mage <br> Training
+                </h1>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                <p>A game for the HTC Vive and Oculus</p>
+
+                <h2>Coming soon to Steam <i class="fa fa-steam" aria-hidden="true"></i></h2>
             </div>
         </div>
     </body>
