@@ -13,7 +13,7 @@ services:
       - ./server/public:/var/www/public:cached
       - ./data/logs/server-nginx:/logs:cached
       - ./data/letsencrypt:/etc/letsencrypt:cached
-      - ./data/nginx/certs:/etc/nginx/certs:cached
+      - ./docker/config/nginx/site.conf:/etc/nginx/conf.d/default.conf:cached
 
   server-php:
     restart: always

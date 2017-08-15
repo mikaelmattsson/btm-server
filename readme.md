@@ -3,6 +3,11 @@
 
 ## Installation
 
+    openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 \
+            -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=battlemagetraining.com" \
+            -keyout ./data/letsencrypt/live/battlemagetraining.com/fullchain.pem \
+            -out ./data/letsencrypt/live/battlemagetraining.com/privkey.pem
+
     bin/install
     bin/composer install
     bin/artisan key:generate

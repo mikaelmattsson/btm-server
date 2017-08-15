@@ -7,14 +7,14 @@
 
         <title>Laravel</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Carter+One|Chewy|Salsa" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Bangers|Patua+One" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
         <style>
             html, body {
                 background-color: #fff;
                 color: #212226;
-                font-family: 'Salsa', cursive;
+                font-family: 'Patua One', cursive;
 
                 font-weight: 400;
                 height: 100vh;
@@ -44,7 +44,7 @@
 
             .title {
                 font-size: 110px;
-                font-family: 'Carter One', cursive;
+                font-family: 'Bangers', cursive;
                 letter-spacing: 0.15rem;
                 text-transform: capitalize;
                 color: #ffe146;
@@ -57,7 +57,7 @@
                         1px 1px 0 #222;
                 margin: 0 0 30px;
                 font-weight: normal;
-                line-height: 1;
+                line-height: 0.85;
                 font-variant: small-caps;
             }
 
@@ -67,7 +67,7 @@
             }
 
             h2, h3, h4 {
-                font-family: 'Chewy', cursive;
+                font-family: 'Bangers', cursive;
                 font-weight: 400;
                 letter-spacing: 0.1rem;
             }
@@ -139,7 +139,7 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <h1 class="title">
-                    Battle Mage <br> Training
+                    Battlemage <br> Training
                 </h1>
 
                 <p>A game for the HTC Vive and Oculus</p>
