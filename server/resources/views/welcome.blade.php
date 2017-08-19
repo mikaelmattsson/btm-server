@@ -36,7 +36,7 @@
         }
 
         .title {
-            background: url('/img/splash.png');
+            background: url('/img/splash.png') center;
             -webkit-background-size: cover;
             background-size: cover;
             padding-bottom: 49%;
